@@ -10,8 +10,6 @@ Version:	%{version}
 Release:	%{release}
 URL:		http://www.parallelrealities.co.uk/blobWars.php
 Source0:	%{name}-%{version}-1.tar.bz2
-#Patch0:		blobwares-1.05-mdkconf.patch.bz2
-Patch1:		%{name}-1.05-debian.patch
 License:	GPL-like
 Group:		Games/Arcade
 Summary:	%{Summary}
@@ -31,8 +29,6 @@ other Blobs who have defected and the evil alien leader, Galdov.
 
 %prep
 %setup -q
-#%patch0 -p1 -b .orig
-%patch1 -p1
 
 %build
 %make OPTFLAGS="$RPM_OPT_FLAGS" DATADIR=%{_gamesdatadir}/%{name}/
