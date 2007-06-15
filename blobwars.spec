@@ -1,7 +1,7 @@
 %define	name	blobwars
 %define	oname	BlobWars
-%define	version	1.05
-%define	rel	2
+%define	version	1.07
+%define	rel	1
 %define	release	%mkrel %{rel}
 %define	Summary	%{oname} Episode I : Metal Blob Solid 
 
@@ -9,7 +9,7 @@ Name:		%{name}
 Version:	%{version}
 Release:	%{release}
 URL:		http://www.parallelrealities.co.uk/blobWars.php
-Source0:	%{name}-%{version}-1.src.tar.bz2
+Source0:	%{name}-%{version}-1.tar.bz2
 Source1:	%{name}-1.0-1.music.zip
 Source2:	%{name}-1.04-data.tar.bz2
 #Patch0:		blobwares-1.05-mdkconf.patch.bz2
