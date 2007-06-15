@@ -10,7 +10,6 @@ Version:	%{version}
 Release:	%{release}
 URL:		http://www.parallelrealities.co.uk/blobWars.php
 Source0:	%{name}-%{version}-1.tar.bz2
-Source2:	%{name}-1.04-data.tar.bz2
 #Patch0:		blobwares-1.05-mdkconf.patch.bz2
 Patch1:		%{name}-1.05-debian.patch
 License:	GPL-like
@@ -31,7 +30,7 @@ POWs as possible. But standing in his way are many vicious enemies,
 other Blobs who have defected and the evil alien leader, Galdov.
 
 %prep
-%setup -q -a2
+%setup -q
 #%patch0 -p1 -b .orig
 %patch1 -p1
 
@@ -43,17 +42,6 @@ other Blobs who have defected and the evil alien leader, Galdov.
 %{__install} -m755 %{name} -D $RPM_BUILD_ROOT%{_gamesbindir}/%{name}
 %{makeinstall_std} DATADIR=$RPM_BUILD_ROOT%{_gamesdatadir}/%{name}/
 %{__rm} -rf $RPM_BUILD_ROOT%{_bindir}/%{name}
-
-%{__install} -d $RPM_BUILD_ROOT%{_menudir}
-%{__cat} <<EOF > $RPM_BUILD_ROOT%{_menudir}/%{name}
-?package(%{name}):command="%{_gamesbindir}/%{name}" \
-		icon=%{name}.png \
-		needs="x11" \
-		section="More Applications/Games/Arcade" \
-		title="%{oname}"\
-		longtitle="%{Summary}"\
-		xdg="true"
-EOF
 
 desktop-file-install --vendor="" \
   --remove-category="Application" \
@@ -75,6 +63,5 @@ desktop-file-install --vendor="" \
 %{_gamesdatadir}/%{name}
 %{_datadir}/applications/%{name}.desktop
 %{_iconsdir}/*
-%{_menudir}/%{name}
 %defattr(755,root,games,755)
 %{_gamesbindir}/%{name}
