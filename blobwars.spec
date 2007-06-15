@@ -35,9 +35,10 @@ other Blobs who have defected and the evil alien leader, Galdov.
 
 %install
 %{__rm} -rf $RPM_BUILD_ROOT
-%{__install} -m755 %{name} -D $RPM_BUILD_ROOT%{_gamesbindir}/%{name}
-%{makeinstall_std} DATADIR=$RPM_BUILD_ROOT%{_gamesdatadir}/%{name}/
-%{__rm} -rf $RPM_BUILD_ROOT%{_bindir}/%{name}
+#%{__install} -m755 %{name} -D $RPM_BUILD_ROOT%{_gamesbindir}/%{name}
+#%{makeinstall_std} DATADIR=$RPM_BUILD_ROOT%{_gamesdatadir}/%{name}/
+%{makeinstall_std}
+#%{__rm} -rf $RPM_BUILD_ROOT%{_bindir}/%{name}
 
 desktop-file-install --vendor="" \
   --remove-category="Application" \
