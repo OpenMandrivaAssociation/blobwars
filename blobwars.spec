@@ -15,6 +15,7 @@ License:	GPL-like
 Group:		Games/Arcade
 Summary:	%{Summary}
 BuildRequires:	SDL_mixer-devel SDL_image-devel SDL_ttf-devel zziplib-devel
+BuildRequires:	desktop-file-utils
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
@@ -42,6 +43,8 @@ other Blobs who have defected and the evil alien leader, Galdov.
 %{makeinstall_std}
 #%{__rm} -rf $RPM_BUILD_ROOT%{_bindir}/%{name}
 
+%{find_lang} %{name}
+
 desktop-file-install --vendor="" \
   --remove-category="Application" \
   --add-category="X-MandrivaLinux-MoreApplications-Games-Arcade;Game;ArcadeGame" \
@@ -56,7 +59,7 @@ desktop-file-install --vendor="" \
 %clean
 %{__rm} -rf $RPM_BUILD_ROOT
 
-%files
+%files -f %{name}.lang
 %defattr(644,root,games,755)
 %doc %{_docdir}/%{name}
 %{_gamesdatadir}/%{name}
