@@ -10,7 +10,6 @@ Version:	%{version}
 Release:	%{release}
 URL:		http://www.parallelrealities.co.uk/blobWars.php
 Source0:	%{name}-%{version}-1.tar.bz2
-Source1:	%{name}-1.0-1.music.zip
 Source2:	%{name}-1.04-data.tar.bz2
 #Patch0:		blobwares-1.05-mdkconf.patch.bz2
 Patch1:		%{name}-1.05-debian.patch
@@ -32,7 +31,7 @@ POWs as possible. But standing in his way are many vicious enemies,
 other Blobs who have defected and the evil alien leader, Galdov.
 
 %prep
-%setup -q -a1 -a2
+%setup -q -a2
 #%patch0 -p1 -b .orig
 %patch1 -p1
 
