@@ -1,7 +1,7 @@
 %define	name	blobwars
 %define	oname	BlobWars
 %define	version	1.07
-%define	rel	1
+%define	rel	2
 %define	release	%mkrel %{rel}
 %define	Summary	%{oname} Episode I : Metal Blob Solid 
 
@@ -11,6 +11,7 @@ Release:	%{release}
 URL:		http://www.parallelrealities.co.uk/blobWars.php
 Source0:	%{name}-%{version}-1.tar.bz2
 Patch1:		blobwars-1.07-makefile.patch
+Patch2:		blobwars-1.07-es-translation.patch
 License:	GPL-like
 Group:		Games/Arcade
 Summary:	%{Summary}
@@ -32,6 +33,7 @@ other Blobs who have defected and the evil alien leader, Galdov.
 %prep
 %setup -q
 %patch1 -p1
+%patch2 -p0
 
 %build
 %make OPTFLAGS="$RPM_OPT_FLAGS" DATADIR=%{_gamesdatadir}/%{name}/
