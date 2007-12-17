@@ -17,7 +17,6 @@ Group:		Games/Arcade
 Summary:	%{Summary}
 BuildRequires:	SDL_mixer-devel SDL_image-devel SDL_ttf-devel zziplib-devel
 BuildRequires:	desktop-file-utils
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 Since their world was invaded by an alien race, the Blobs have
