@@ -1,7 +1,7 @@
 %define	name	blobwars
 %define	oname	BlobWars
 %define	version	1.07
-%define	rel	2
+%define	rel	3
 %define	release	%mkrel %{rel}
 %define	Summary	%{oname} Episode I : Metal Blob Solid 
 
@@ -47,7 +47,6 @@ other Blobs who have defected and the evil alien leader, Galdov.
 desktop-file-install --vendor="" \
   --remove-key="Encoding" \
   --remove-category="Application" \
-  --remove-category="ArcadeGame" \
   --dir $RPM_BUILD_ROOT%{_datadir}/applications $RPM_BUILD_ROOT%{_datadir}/applications/*
 
 %post
