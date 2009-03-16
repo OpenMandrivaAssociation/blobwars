@@ -8,7 +8,7 @@
 Name:		%{name}
 Version:	%{version}
 Release:	%{release}
-URL:		http://www.parallelrealities.co.uk/blobWars.php
+URL:		http://www.parallelrealities.co.uk/projects/blobWars.php
 Source0:	%{name}-%{version}-1.tar.gz
 Patch0:		blobwars-1.07-makefile.patch
 Patch1:		blobwars-1.11-es.patch
