@@ -1,6 +1,6 @@
 %define	name	blobwars
 %define	oname	BlobWars
-%define	version	1.08
+%define	version	1.11
 %define	rel	1
 %define	release	%mkrel %{rel}
 %define	Summary	%{oname} Episode I : Metal Blob Solid 
@@ -10,7 +10,9 @@ Version:	%{version}
 Release:	%{release}
 URL:		http://www.parallelrealities.co.uk/blobWars.php
 Source0:	%{name}-%{version}-1.tar.gz
-Patch1:		blobwars-1.07-makefile.patch
+Patch0:		blobwars-1.07-makefile.patch
+Patch1:		blobwars-1.11-es.patch
+Patch2:		blobwars-1.11-es-title.patch
 License:	GPL-like
 Group:		Games/Arcade
 Summary:	%{Summary}
@@ -31,13 +33,15 @@ other Blobs who have defected and the evil alien leader, Galdov.
 
 %prep
 %setup -q
-%patch1 -p1
+%patch0 -p1
+%patch1 -p0
+%patch2 -p0
 
 %build
 %make OPTFLAGS="$RPM_OPT_FLAGS" DATADIR=%{_gamesdatadir}/%{name}/
 
 %install
-%{__rm} -rf $RPM_BUILD_ROOT
+%{__rm} -rf %{buildroot}
 %{makeinstall_std}
 
 %{find_lang} %{name}
@@ -45,7 +49,7 @@ other Blobs who have defected and the evil alien leader, Galdov.
 desktop-file-install --vendor="" \
   --remove-key="Encoding" \
   --remove-category="Application" \
-  --dir $RPM_BUILD_ROOT%{_datadir}/applications $RPM_BUILD_ROOT%{_datadir}/applications/*
+  --dir %{buildroot}%{_datadir}/applications %{buildroot}%{_datadir}/applications/*
 
 %if %mdkversion < 200900
 %post
@@ -58,7 +62,7 @@ desktop-file-install --vendor="" \
 %endif
 
 %clean
-%{__rm} -rf $RPM_BUILD_ROOT
+%{__rm} -rf %{buildroot}
 
 %files -f %{name}.lang
 %defattr(644,root,games,755)
