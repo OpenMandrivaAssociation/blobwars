@@ -8,12 +8,13 @@
 Name:		%{name}
 Version:	%{version}
 Release:	%{release}
-URL:		http://www.parallelrealities.co.uk/projects/blobWars.php
-Source0:	%{name}-%{version}-1.tar.gz
+URL:		http://www.parallelrealities.co.uk
+Source0:	http://www.parallelrealities.co.uk/download/%{name}/%{name}-%{version}-1.tar.gz
 Patch0:		blobwars-1.07-makefile.patch
 Patch1:		blobwars-1.11-es.patch
 Patch2:		blobwars-1.11-es-title.patch
-License:	GPL-like
+Patch3:		blobwars-1.11-no-werror.patch
+License:	GPLv2+
 Group:		Games/Arcade
 Summary:	%{Summary}
 BuildRequires:	SDL_mixer-devel SDL_image-devel SDL_ttf-devel zziplib-devel
@@ -36,6 +37,7 @@ other Blobs who have defected and the evil alien leader, Galdov.
 %patch0 -p1
 %patch1 -p0
 %patch2 -p0
+%patch3 -p0
 
 %build
 %make OPTFLAGS="$RPM_OPT_FLAGS" DATADIR=%{_gamesdatadir}/%{name}/
@@ -49,6 +51,7 @@ other Blobs who have defected and the evil alien leader, Galdov.
 desktop-file-install --vendor="" \
   --remove-key="Encoding" \
   --remove-category="Application" \
+  --add-category="ArcadeGame" \
   --dir %{buildroot}%{_datadir}/applications %{buildroot}%{_datadir}/applications/*
 
 %if %mdkversion < 200900
