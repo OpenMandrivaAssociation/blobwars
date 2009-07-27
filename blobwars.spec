@@ -1,6 +1,6 @@
 %define	name	blobwars
 %define	oname	BlobWars
-%define	version	1.11
+%define	version	1.14
 %define	rel	1
 %define	release	%mkrel %{rel}
 %define	Summary	%{oname} Episode I : Metal Blob Solid 
@@ -11,9 +11,6 @@ Release:	%{release}
 URL:		http://www.parallelrealities.co.uk
 Source0:	http://www.parallelrealities.co.uk/download/%{name}/%{name}-%{version}-1.tar.gz
 Patch0:		blobwars-1.07-makefile.patch
-Patch1:		blobwars-1.11-es.patch
-Patch2:		blobwars-1.11-es-title.patch
-Patch3:		blobwars-1.11-no-werror.patch
 License:	GPLv2+
 Group:		Games/Arcade
 Summary:	%{Summary}
@@ -35,12 +32,10 @@ other Blobs who have defected and the evil alien leader, Galdov.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p0
-%patch2 -p0
-%patch3 -p0
+sed -i 's@-Werror@@' makefile
 
 %build
-%make OPTFLAGS="$RPM_OPT_FLAGS" DATADIR=%{_gamesdatadir}/%{name}/
+CFLAGS="%optflags" %make DATADIR=%{_gamesdatadir}/%{name}/
 
 %install
 %{__rm} -rf %{buildroot}
