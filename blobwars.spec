@@ -18,7 +18,7 @@ BuildRequires:	SDL_mixer-devel
 BuildRequires:	SDL_image-devel
 BuildRequires:	SDL_ttf-devel
 BuildRequires:	SDL_net-devel
-BuildRequires:	zziplib-devel
+BuildRequires:	zlib-devel
 BuildRequires:	desktop-file-utils
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
