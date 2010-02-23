@@ -14,7 +14,11 @@ Patch0:		blobwars-1.07-makefile.patch
 License:	GPLv2+
 Group:		Games/Arcade
 Summary:	%{Summary}
-BuildRequires:	SDL_mixer-devel SDL_image-devel SDL_ttf-devel zziplib-devel
+BuildRequires:	SDL_mixer-devel
+BuildRequires:	SDL_image-devel
+BuildRequires:	SDL_ttf-devel
+BuildRequires:	SDL_net-devel
+BuildRequires:	zziplib-devel
 BuildRequires:	desktop-file-utils
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
