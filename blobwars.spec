@@ -1,7 +1,7 @@
 %define	name	blobwars
 %define	oname	BlobWars
 %define	version	1.16
-%define	rel	1
+%define	rel	2
 %define	release	%mkrel %{rel}
 %define	Summary	%{oname} Episode I : Metal Blob Solid 
 
