@@ -1,0 +1,31 @@
+--- makefile.link	2011-05-18 16:12:31.000000000 +0200
++++ makefile	2011-05-18 16:14:03.000000000 +0200
+@@ -21,7 +21,7 @@
+ CXXFLAGS += `sdl-config --cflags` -DVERSION=$(VERSION) -DRELEASE=$(RELEASE) -DUSEPAK=$(USEPAK)
+ CXXFLAGS += -DPAKNAME=\"$(PAKNAME)\" -DPAKLOCATION=\"$(DATADIR)\" -DUNIX -DGAMEPLAYMANUAL=\"$(DOCDIR)index.html\" -Wall
+ CXXFLAGS += -DLOCALEDIR=\"$(LOCALEDIR)\" -DMEDAL_SERVER_HOST=\"$(MEDAL_SERVER_HOST)\" -DMEDAL_SERVER_PORT=$(MEDAL_SERVER_PORT)
+-CXXFLAGS += $(CFLAGS) -Werror
++CXXFLAGS += $(CFLAGS)
+ LIBS = `sdl-config --libs` -lSDL_mixer -lSDL_image -lSDL_ttf -lSDL_net -lz
+ 
+ OBJS += CAudio.o
+@@ -82,16 +82,16 @@
+ 
+ # linking the program.
+ $(PROG): $(GAMEOBJS)
+-	$(CXX) $(LIBS) $(GAMEOBJS) -o $(PROG)
++	$(CXX) $(LDFLAGS) $(GAMEOBJS) -o $(PROG) $(LIBS)
+ 	
+ pak: $(PAKOBJS)
+-	$(CXX) $(LIBS) $(PAKOBJS) -o pak
++	$(CXX) $(LDFLAGS) $(PAKOBJS) -o pak $(LIBS)
+ 
+ %.mo: %.po
+ 	msgfmt -c -o $@ $<
+ 
+ mapeditor: $(MAPOBJS)
+-	$(CXX) $(LIBS) $(MAPOBJS) -o mapeditor
++	$(CXX) $(LDFLAGS) $(MAPOBJS) -o mapeditor $(LIBS)
+ 
+ # cleaning everything that can be automatically recreated with "make".
+ clean:
