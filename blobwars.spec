@@ -1,20 +1,15 @@
-%define	name	blobwars
 %define	oname	BlobWars
-%define	version	1.19
-%define	release	2
-%define	Summary	%{oname} Episode I : Metal Blob Solid 
 
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:		blobwars
+Version:	2.00
+Release:	1
 URL:		http://www.parallelrealities.co.uk
-Source0:	http://ovh.dl.sourceforge.net/project/blobwars/%{name}-%{version}.tar.gz
+Source0:	https://github.com/perpendicular-dimensions/blobwars/archive/master/%{oname}-%{version}.tar.gz
 Source100:	%{name}.rpmlintrc
-Patch0:		blobwars-1.19-link.patch
 
 License:	GPLv2+
 Group:		Games/Arcade
-Summary:	%{Summary}
+Summary:	BlobWars Episode I : Metal Blob Solid
 BuildRequires:	desktop-file-utils
 BuildRequires:	pkgconfig(sdl)
 BuildRequires:	pkgconfig(SDL_image)
@@ -37,25 +32,17 @@ POWs as possible. But standing in his way are many vicious enemies,
 other Blobs who have defected and the evil alien leader, Galdov.
 
 %prep
-%setup -q
-%patch0 -p0
+%autosetup -p1 -n blobwars-master
+%meson
 
 %build
-CFLAGS="%optflags" LDFLAGS="%ldflags" %make DATADIR=%{_gamesdatadir}/%{name}/
+%meson_build
 
 %install
-%makeinstall_std
+%meson_install
+rm %{buildroot}%{_datadir}/applications/*.ico
 
-%find_lang %{name}
-
-desktop-file-install --vendor="" \
-  --remove-key="Encoding" \
-  --remove-category="Application" \
-  --add-category="ArcadeGame" \
-  --dir %{buildroot}%{_datadir}/applications %{buildroot}%{_datadir}/applications/*
-
-
-%files -f %{name}.lang
+%files
 %defattr(644,root,games,755)
 %doc %{_docdir}/%{name}
 %{_gamesdatadir}/%{name}
