@@ -12,14 +12,13 @@ License:	GPLv2+
 Group:		Games/Arcade
 Summary:	BlobWars Episode I : Metal Blob Solid
 BuildRequires:	desktop-file-utils
+BuildRequires:	meson ninja
 BuildRequires:	pkgconfig(sdl2)
 BuildRequires:	pkgconfig(SDL2_image)
 BuildRequires:	pkgconfig(SDL2_mixer)
 BuildRequires:	pkgconfig(SDL2_net)
 BuildRequires:	pkgconfig(SDL2_ttf)
 BuildRequires:	pkgconfig(zlib)
-
-
 
 %description
 Since their world was invaded by an alien race, the Blobs have
