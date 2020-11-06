@@ -6,16 +6,17 @@ Release:	1
 URL:		http://www.parallelrealities.co.uk
 Source0:	https://github.com/perpendicular-dimensions/blobwars/archive/master/%{oname}-%{version}.tar.gz
 Source100:	%{name}.rpmlintrc
+Patch0:		blobwars-compile.patch
 
 License:	GPLv2+
 Group:		Games/Arcade
 Summary:	BlobWars Episode I : Metal Blob Solid
 BuildRequires:	desktop-file-utils
-BuildRequires:	pkgconfig(sdl)
-BuildRequires:	pkgconfig(SDL_image)
-BuildRequires:	pkgconfig(SDL_mixer)
-BuildRequires:	pkgconfig(SDL_net)
-BuildRequires:	pkgconfig(SDL_ttf)
+BuildRequires:	pkgconfig(sdl2)
+BuildRequires:	pkgconfig(SDL2_image)
+BuildRequires:	pkgconfig(SDL2_mixer)
+BuildRequires:	pkgconfig(SDL2_net)
+BuildRequires:	pkgconfig(SDL2_ttf)
 BuildRequires:	pkgconfig(zlib)
 
 

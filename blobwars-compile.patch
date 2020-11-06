@@ -1,0 +1,23 @@
+diff -up blobwars-master/src/CEntity.cpp.omv~ blobwars-master/src/CEntity.cpp
+--- blobwars-master/src/CEntity.cpp.omv~	2020-11-06 22:59:47.499179810 +0100
++++ blobwars-master/src/CEntity.cpp	2020-11-06 22:59:55.350263178 +0100
+@@ -20,6 +20,7 @@ Foundation, Inc., 59 Temple Place - Suit
+ */
+ 
+ #include "headers.h"
++#include <cassert>
+ 
+ Entity::Entity(int id, const std::string &name, int x, int y)
+ {
+diff -up blobwars-master/src/headers.h.omv~ blobwars-master/src/headers.h
+--- blobwars-master/src/headers.h.omv~	2020-11-06 22:59:27.664969658 +0100
++++ blobwars-master/src/headers.h	2020-11-06 22:59:32.103016623 +0100
+@@ -45,7 +45,7 @@ Foundation, Inc., 59 Temple Place - Suit
+ 
+ #include <fmt/format.h>
+ #include <fmt/ostream.h>
+-#include <fmt/time.h>
++//#include <fmt/time.h>
+ //#include <boost/filesystem.hpp>
+ 
+ #include <yaml-cpp/yaml.h>
