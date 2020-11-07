@@ -20,6 +20,7 @@ BuildRequires:	pkgconfig(SDL2_net)
 BuildRequires:	pkgconfig(SDL2_ttf)
 BuildRequires:	pkgconfig(zlib)
 BuildRequires:	pkgconfig(fmt)
+BuildRequires:	pkgconfig(yaml-cpp)
 
 %description
 Since their world was invaded by an alien race, the Blobs have
