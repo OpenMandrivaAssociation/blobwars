@@ -1,0 +1,11 @@
+diff -up blobwars-master/src/mapEditor.cpp.omv~ blobwars-master/src/mapEditor.cpp
+--- blobwars-master/src/mapEditor.cpp.omv~	2021-12-30 04:32:04.483727213 +0100
++++ blobwars-master/src/mapEditor.cpp	2021-12-30 04:32:12.693948503 +0100
+@@ -20,6 +20,7 @@ Foundation, Inc., 59 Temple Place - Suit
+ */
+ 
+ #include "headers.h"
++#include <limits.h>
+ 
+ Audio audio;
+ Engine engine;
