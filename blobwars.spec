@@ -2,7 +2,7 @@
 
 Name:		blobwars
 Version:	2.00
-Release:	2
+Release:	3
 URL:		http://www.parallelrealities.co.uk
 Source0:	https://github.com/perpendicular-dimensions/blobwars/archive/master/%{oname}-%{version}.tar.gz
 Source100:	%{name}.rpmlintrc
@@ -50,7 +50,7 @@ rm %{buildroot}%{_datadir}/applications/*.ico
 %doc %{_docdir}/%{name}
 %{_gamesdatadir}/%{name}
 %{_datadir}/applications/%{name}.desktop
-%{_iconsdir}/*
+%{_iconsdir}/hicolor/*/*/*
 %defattr(755,root,games,755)
 %{_gamesbindir}/%{name}
 
