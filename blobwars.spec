@@ -2,8 +2,8 @@
 
 Name:		blobwars
 Version:	2.00
-Release:	3
-URL:		http://www.parallelrealities.co.uk
+Release:	4
+URL:		https://www.parallelrealities.co.uk
 Source0:	https://github.com/perpendicular-dimensions/blobwars/archive/master/%{oname}-%{version}.tar.gz
 Source100:	%{name}.rpmlintrc
 Patch0:		blobwars-compile.patch
